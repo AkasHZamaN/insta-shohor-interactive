@@ -27,7 +27,7 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-    return text.length < 30 ? 'text' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+    return text.length < 30 ? text.slice(0, 30) : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 
 const switchTab = (id) => {
@@ -137,7 +137,6 @@ const showPosts = (posts) => {
     productsContainer.innerHTML = "";
 
     posts.forEach((post) => {
-      console.log(post);
         const div = createPost(post);
         productsContainer.appendChild(div);
     });
